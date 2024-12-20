@@ -28,6 +28,8 @@ def norm_path(path: os.PathLike) -> os.PathLike:
 
 def install_castxml():
     bin_path = os.environ.get("VIRTUAL_ENV_BIN")
+    if bin_path is None:
+        bin_path = os.getcwd()
     castxml_dir = os.path.join(bin_path, "castxml")
 
     castxml_bin_dir = os.path.join(castxml_dir, "bin")
